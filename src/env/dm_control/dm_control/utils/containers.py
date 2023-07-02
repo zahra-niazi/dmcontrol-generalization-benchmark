@@ -20,6 +20,7 @@ from __future__ import division
 from __future__ import print_function
 
 import collections
+from collections.abc import Mapping
 import six
 
 _NAME_ALREADY_EXISTS = (
@@ -27,7 +28,7 @@ _NAME_ALREADY_EXISTS = (
     "`allow_overriding_keys` is False.")
 
 
-class TaggedTasks(collections.Mapping):
+class TaggedTasks(Mapping):
   """Maps task names to their corresponding factory functions with tags.
 
   To store a function in a `TaggedTasks` container, we can use its `.add`
